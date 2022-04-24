@@ -37,7 +37,7 @@ h1{
 /* footrt starts */
 footer{
     margin-top: 5%;
-    padding: 1% 10%;
+    padding: 1% 10% 0% 10%;
     background-color: rgb(43, 2, 26);
     color: aliceblue;
 }
