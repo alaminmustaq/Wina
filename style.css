@@ -1,0 +1,155 @@
+nav{
+    height: 100px;
+    background-color: rgb(26, 5, 61);
+    
+}
+header{
+    font-size: 25px; 
+}
+h1{
+    font-size: 50px;
+}
+.title{
+    font-size: 35px;
+}
+.num{
+    font-size: 20px;
+}
+
+.masthead{
+    background-size: cover;
+    min-height: 70vh;
+    
+}
+.product-banner{
+    background-size: cover;
+    min-height: 40vh;
+}
+.contact-info{
+    color: white;
+    font-size: x-large;
+}
+.wina-title{
+    font-size: xx-large;
+    color: #91c7b9;
+}
+
+/* footrt starts */
+footer{
+    margin-top: 5%;
+    padding: 1% 10%;
+    background-color: rgb(43, 2, 26);
+    color: aliceblue;
+}
+
+.text-dec {
+    color: #cfcfcf;
+    text-decoration: none;
+}
+
+/* footrt ends */
+/* card starts */
+.card {
+    box-shadow: 4px 5px 5px 1px #e9ecef;
+    transition: all 0.9s ease;
+    cursor: pointer;
+}
+
+.product-card{
+    height: 450px;
+}
+
+.card:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1)
+}
+/* card ends */
+
+.carousel-item {
+    height: 655px;
+    width: 100%;
+}
+.img-size{
+    height: 655px;
+    width: 100%;
+}
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+table tr td{
+    padding: 10px;
+}
+
+
+@media only screen and (max-width : 1900px) {
+    .contact-info{
+        color: white;
+        font-size:large;
+    }
+    .wina-title{
+        font-size: x-large;
+        color: #91c7b9;
+    }
+}
+@media only screen and (max-width : 1450px) {
+    .carousel-item {
+        height: 600px;
+        width: 100%;
+        padding-left:  5%;
+        padding-right: 5%;
+    }
+    .product-banner{
+        background-size: cover;
+        min-height: 30vh;
+    }
+    
+    .img-size{
+        height: 600px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width : 992px) {
+    .navbar-collapse {
+    background: rgb(26, 4, 68); 
+    }
+    .carousel-item {
+        padding-left:  0%;
+        padding-right: 0%;
+    }
+    .masthead{
+        min-height: 40vh;
+    }
+    .product-banner{
+        background-size: cover;
+        min-height: 20vh;
+    }
+
+    h2{
+        font-size: large;
+    }
+    h5{
+        font-size: medium;
+    }
+}
+@media only screen and (max-width : 768px) {
+    .masthead{
+        min-height: 35vh;
+    }
+    .product-banner{
+        background-size: cover;
+        min-height: 15vh;
+    }
+    .carousel-item {
+        height: 450px;
+        width: 100%;
+        padding-left:  0%;
+        padding-right: 0%;
+    }
+    .img-size{
+        height: 450px;
+        width: 100%;
+        object-fit: fill;
+    }
+}
