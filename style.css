@@ -57,6 +57,7 @@ footer{
 
 .product-card{
     height: 450px;
+    box-shadow: 4px 5px 5px 1px #e9ecef;
 }
 
 .machine-card:hover {
