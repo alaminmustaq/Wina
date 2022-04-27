@@ -23,7 +23,7 @@ h1{
 }
 .product-banner{
     background-size: cover;
-    min-height: 40vh;
+    min-height: 50vh;
 }
 .contact-info{
     color: white;
@@ -55,8 +55,9 @@ footer{
     cursor: pointer;
 }
 
-.product-card{
+#product-card{
     height: 450px;
+    transform: none;
 }
 
 .card:hover {
@@ -82,6 +83,15 @@ table tr td{
     padding: 10px;
 }
 
+.inner{
+    overflow: hidden;
+}
+.inner img{
+    transition: all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.4);
+}
 
 @media only screen and (max-width : 1900px) {
     .contact-info{
@@ -102,7 +112,7 @@ table tr td{
     }
     .product-banner{
         background-size: cover;
-        min-height: 30vh;
+        min-height: 40vh;
     }
     
     .img-size{
@@ -123,7 +133,7 @@ table tr td{
     }
     .product-banner{
         background-size: cover;
-        min-height: 20vh;
+        min-height: 30vh;
     }
 
     h2{
@@ -139,7 +149,7 @@ table tr td{
     }
     .product-banner{
         background-size: cover;
-        min-height: 15vh;
+        min-height: 20vh;
     }
     .carousel-item {
         height: 450px;

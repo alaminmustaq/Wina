@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
       if(y.matches)
       {
-        if (window.scrollY > 120) {
+        if (window.scrollY > 130) {
           document.getElementById('navbar_top').classList.add('fixed-top');
           // add padding top to show content behind navbar
           navbar_height = document.querySelector('.navbar').offsetHeight;
