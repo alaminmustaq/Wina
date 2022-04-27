@@ -49,18 +49,17 @@ footer{
 
 /* footrt ends */
 /* card starts */
-.card {
+.machine-card {
     box-shadow: 4px 5px 5px 1px #e9ecef;
     transition: all 0.9s ease;
     cursor: pointer;
 }
 
-#product-card{
+.product-card{
     height: 450px;
-    transform: none;
 }
 
-.card:hover {
+.machine-card:hover {
     box-shadow: 5px 6px 6px 2px #e9ecef;
     transform: scale(1.1)
 }
