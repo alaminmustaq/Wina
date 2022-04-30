@@ -71,7 +71,7 @@ footer{
     width: 100%;
 }
 .img-size{
-    height: 655px;
+    height: 100%;
     width: 100%;
 }
 .carousel-control-next,
@@ -91,6 +91,10 @@ table tr td{
 }
 .inner:hover img{
     transform: scale(1.4);
+}
+.contact-form{
+    height: 100vh;
+    background-color: #e9ecef;
 }
 
 @media only screen and (max-width : 1900px) {
@@ -158,8 +162,7 @@ table tr td{
         padding-right: 0%;
     }
     .img-size{
-        height: 450px;
-        width: 100%;
-        object-fit: fill;
+        width:100%;
+        height:100%;
     }
 }
