@@ -1,8 +1,12 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 nav{
     height: 100px;
     background-color: rgb(26, 5, 61);
     
 }
+
 header{
     font-size: 25px; 
 }
@@ -50,6 +54,7 @@ footer{
 /* footrt ends */
 /* card starts */
 .machine-card {
+    padding-bottom: 3%;
     box-shadow: 4px 5px 5px 1px #e9ecef;
     transition: all 0.9s ease;
     cursor: pointer;
@@ -65,9 +70,11 @@ footer{
     transform: scale(1.1)
 }
 /* card ends */
-
+.carousel-size{
+    width: 70%;
+}
 .carousel-item {
-    height: 655px;
+    height: 700px;
     width: 100%;
 }
 .img-size{
@@ -156,7 +163,7 @@ table tr td{
         min-height: 20vh;
     }
     .carousel-item {
-        height: 450px;
+        height: 350px;
         width: 100%;
         padding-left:  0%;
         padding-right: 0%;
