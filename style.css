@@ -70,7 +70,7 @@ footer{
     width: 70%;
 }
 .carousel-item {
-    height: 700px;
+    height: auto;
     width: 100%;
 }
 .img-size{
@@ -98,6 +98,11 @@ table tr td{
 .contact-form{
     height: 100vh;
     background-color: #e9ecef;
+}
+.machine-details{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: whitesmoke;
 }
 
 @media only screen and (max-width : 1900px) {
@@ -142,12 +147,14 @@ table tr td{
         background-size: cover;
         min-height: 30vh;
     }
-
-    h2{
-        font-size: large;
-    }
     h5{
         font-size: medium;
+    }
+    .machine-details{
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: white;
     }
 }
 @media only screen and (max-width : 768px) {
