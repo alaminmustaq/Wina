@@ -56,7 +56,6 @@ footer{
 .machine-card {
     padding-bottom: 3%;
     box-shadow: 4px 5px 5px 1px #e9ecef;
-    transition: all 0.9s ease;
     cursor: pointer;
 }
 
@@ -65,10 +64,7 @@ footer{
     box-shadow: 4px 5px 5px 1px #e9ecef;
 }
 
-.machine-card:hover {
-    box-shadow: 5px 6px 6px 2px #e9ecef;
-    transform: scale(1.1)
-}
+
 /* card ends */
 .carousel-size{
     width: 70%;
