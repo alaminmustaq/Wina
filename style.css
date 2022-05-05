@@ -2,9 +2,8 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 nav{
-    height: 100px;
-    background-color: rgb(26, 5, 61);
-    
+    height: auto;
+    background-color: rgb(26, 5, 61);    
 }
 
 header{
@@ -54,7 +53,6 @@ footer{
 /* footrt ends */
 /* card starts */
 .machine-card {
-    padding-bottom: 3%;
     box-shadow: 4px 5px 5px 1px #e9ecef;
     cursor: pointer;
 }
@@ -102,7 +100,14 @@ table tr td{
 .machine-details{
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: whitesmoke;
+    
+}
+.nav-color{
+    text-decoration: none;
+    color: black;
+}
+.nav-color:hover{
+    color: rgb(20, 75, 55);
 }
 
 @media only screen and (max-width : 1900px) {
