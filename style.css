@@ -21,8 +21,8 @@ h1{
 
 .masthead{
     background-size: cover;
-    padding-top: 250px;
-    padding-bottom: 250px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     
 }
 .product-banner{
@@ -113,16 +113,15 @@ table tr td{
     align-items: center;
     height: 10vh;
 }
-.link a{
+ul li a.link{
     text-decoration: none;
     color: rgb(5, 32, 27);
 }
 .link{
     position: relative;
     cursor: pointer;
-    padding-bottom: 33px;
+    padding-bottom: 24px;
     margin-right: 20px;
-    margin-top: 10px;
 }
 .link::after{
     position: absolute;
@@ -140,6 +139,12 @@ table tr td{
 .link:hover.link::after{
     width: 100%; 
 }
+.link.active{
+    font-weight: 500;
+}
+.link.active.link::after{
+    width: 100%; 
+}
 .hr-design{
     position: absolute;
     margin-top: 81px;
@@ -149,6 +154,13 @@ table tr td{
 .sub-link{
     text-decoration: none; 
     color: rgb(74, 74, 78);
+}
+.location{
+    top: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
 }
 /* machine sub navbar ends*/
 @media only screen and (max-width : 1900px) {
