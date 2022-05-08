@@ -18,7 +18,7 @@ h1{
 .num{
     font-size: 20px;
 }
-
+/* banner section */
 .masthead{
     background-size: cover;
     padding-top: 200px;
@@ -30,6 +30,7 @@ h1{
     padding-top: 150px;
     padding-bottom: 150px;
 }
+/* banner section */
 .contact-info{
     color: white;
     font-size: x-large;
@@ -105,13 +106,18 @@ table tr td{
     
 }
 /* machine sub navbar */
+.box{
+    border-style: solid;
+    border-width: 1px;
+    border-color: white white rgb(185, 184, 184) white;
+}
 .list{
     list-style: none;
     top: 0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 10vh;
+    height: 5vh;
 }
 ul li a.link{
     text-decoration: none;
@@ -120,7 +126,7 @@ ul li a.link{
 .link{
     position: relative;
     cursor: pointer;
-    padding-bottom: 24px;
+    padding-bottom: 31px;
     margin-right: 20px;
 }
 .link::after{
@@ -130,7 +136,7 @@ ul li a.link{
     content: "";
     width: 0%;
     height: 2px;
-    background-color: rgb(10, 104, 88);
+    background-color: #21888D;
     transition: 0.4s ease-out;
 }
 .link:hover{
@@ -160,7 +166,7 @@ ul li a.link{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 10vh;
+    height: 5vh;
 }
 /* machine sub navbar ends*/
 @media only screen and (max-width : 1900px) {
@@ -176,6 +182,12 @@ ul li a.link{
 @media only screen and (max-width : 1400px) {
     .hr-design{
         width: 1100px;
+    }
+    .link{
+        position: relative;
+        cursor: pointer;
+        padding-bottom: 27px;
+        margin-right: 20px;
     }
 }
 @media only screen and (max-width : 1450px) {
@@ -210,6 +222,12 @@ ul li a.link{
     }
     h5{
         font-size: medium;
+    }
+    .hr-design{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 32px;
+        width: 670px;
     }
     .machine-details{
         margin-top: 10px;
