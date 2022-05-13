@@ -176,6 +176,64 @@ ul li a.link{
     height: 5vh;
 }
 /* machine sub navbar ends*/
+/* popup starts */
+.model{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    z-index: 10;
+    background-color: white;
+    width: 1000px;
+    max-width: 80%;
+}
+.model.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.model-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    border-color: rgb(201, 201, 201);
+}
+.model-header .title{
+    font-size: medium;
+    font-weight: bold;
+}
+
+.model-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.model-body{
+    padding: 10px 15px;
+}
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* popup ends */
+
 @media only screen and (max-width : 1900px) {
     .contact-info{
         color: white;
