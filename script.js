@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function(){
 //  popup starts
   const openModelButtons = document.querySelectorAll('[data-model-target]')
   const closeModelButtons = document.querySelectorAll('[data-close-button]')
+  const confirmButton = document.querySelectorAll('[data-confirm-button]')
   const overlay = document.getElementById('overlay')
+  let table = document.getElementById('inquery-table')
 
   openModelButtons.forEach(button =>{
     button.addEventListener('click', () =>{
@@ -57,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function(){
       closeModel(model)
     })
   })
+  confirmButton.forEach(button =>{
+    button.addEventListener('click', () =>{
+      const model = button.closest('.model')
+      confirmModel(model)
+    })
+  })
   function openModel(model){
     if(model == null) return
     model.classList.add('active')
@@ -67,4 +75,24 @@ document.addEventListener("DOMContentLoaded", function(){
     model.classList.remove('active')
     overlay.classList.remove('active')
   }
+  function confirmModel(model){
+    if(model == null) return
+    var gantry_crane = document.getElementById('gc')
+    if( gantry_crane.checked == true)
+    {
+      let templet = '<tr><td></td><td><img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px"></td><td>Gantry Crane</td><td>0.00$</td><td><p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p></td><td>blank</td><td><button class="remove-button" onclick="deleteRow(this)">Remove</button></td></tr>'
+      table.innerHTML += templet
+      closeModel(model)
+    }
+  }
 //  popup ends
+// inquiry_table starts
+function deleteRow(btn) {
+  var row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
+function enquiry(){
+  let templet = '<tr><td></td><td><img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px"></td><td>Gantry Crane</td><td>0.00$</td><td><p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p></td><td>blank</td><td><button class="remove-button" onclick="deleteRow(this)">Remove</button></td></tr>'
+  table.innerHTML += templet
+}
+// inquiry_table ends

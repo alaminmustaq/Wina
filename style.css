@@ -1,53 +1,62 @@
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(250, 250, 250);
-    
+
 }
-.nav-top{
+
+.nav-top {
     background-color: rgb(17, 14, 48);
     margin-bottom: 0.5px;
 }
-nav{
+
+nav {
     height: auto;
-    background-color: rgb(17, 14, 48);    
+    background-color: rgb(17, 14, 48);
 }
 
-header{
-    font-size: 25px; 
+header {
+    font-size: 25px;
 }
-h1{
+
+h1 {
     font-size: 50px;
 }
-.title{
+
+.title {
     font-size: 35px;
 }
-.num{
+
+.num {
     font-size: 20px;
 }
+
 /* banner section */
-.masthead{
+.masthead {
     background-size: cover;
     padding-top: 200px;
     padding-bottom: 200px;
-    
+
 }
-.product-banner{
+
+.product-banner {
     background-size: cover;
     padding-top: 150px;
     padding-bottom: 150px;
 }
+
 /* banner section */
-.contact-info{
+.contact-info {
     color: rgb(255, 255, 255);
     font-size: x-large;
 }
-.wina-title{
+
+.wina-title {
     font-size: xx-large;
     color: #489fa5;
 }
 
 /* footrt starts */
-footer{
+footer {
     margin-top: 5%;
     padding: 1% 10% 0% 10%;
     background-color: rgb(43, 2, 26);
@@ -66,59 +75,71 @@ footer{
     cursor: pointer;
 }
 
-.product-card{
+.product-card {
     height: 450px;
     box-shadow: 4px 5px 5px 1px #e9ecef;
 }
 
 
 /* card ends */
-.carousel-size{
+.carousel-size {
     width: 70%;
 }
+
 .carousel-item {
     height: auto;
     width: 100%;
 }
-.img-size{
+
+.img-size {
     height: 100%;
     width: 100%;
 }
+
 .carousel-control-next,
-.carousel-control-prev /*, .carousel-indicators */ {
+.carousel-control-prev
+
+/*, .carousel-indicators */
+    {
     filter: invert(100%);
 }
 
-table tr td{
+table tr td {
     padding: 10px;
 }
 
-.inner{
+.inner {
     overflow: hidden;
 }
-.inner img{
+
+.inner img {
     transition: all 1.5s ease;
 }
-.inner:hover img{
+
+.inner:hover img {
     transform: scale(1.4);
 }
-.contact-form{
+
+.contact-form {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.machine-details{
+
+.machine-details {
     padding-top: 60px;
     padding-bottom: 60px;
-    
+
 }
+
 /* machine sub navbar */
-.box{
+.box {
     border-style: solid;
     border-width: 1px;
     border-color: white white rgb(211, 210, 210) white;
 }
-.list{
+
+.list {
     list-style: none;
     top: 0px;
     display: flex;
@@ -126,17 +147,20 @@ table tr td{
     align-items: center;
     height: 5vh;
 }
-ul li a.link{
+
+ul li a.link {
     text-decoration: none;
     color: rgb(5, 32, 27);
 }
-.link{
+
+.link {
     position: relative;
     cursor: pointer;
     padding-bottom: 31px;
     margin-right: 20px;
 }
-.link::after{
+
+.link::after {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -146,38 +170,55 @@ ul li a.link{
     background-color: #21888D;
     transition: 0.4s ease-out;
 }
-.link:hover{
+
+.link:hover {
     font-weight: 500;
 }
-.link:hover.link::after{
-    width: 100%; 
+
+.link:hover.link::after {
+    width: 100%;
 }
-.link.active{
+
+.link.active {
     font-weight: 500;
 }
-.link.active.link::after{
-    width: 100%; 
+
+.link.active.link::after {
+    width: 100%;
 }
-.hr-design{
+
+.hr-design {
     position: absolute;
     margin-top: 81px;
     margin-left: 32px;
     width: 1280px;
 }
-.sub-link{
-    text-decoration: none; 
+
+.sub-link {
+    text-decoration: none;
     color: rgb(74, 74, 78);
 }
-.location{
+
+.location {
     top: 0px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 5vh;
 }
+
 /* machine sub navbar ends*/
+.remove-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+    color: red;
+}
+
 /* popup starts */
-.model{
+.model {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -189,10 +230,12 @@ ul li a.link{
     width: 1000px;
     max-width: 80%;
 }
-.model.active{
+
+.model.active {
     transform: translate(-50%, -50%) scale(1);
 }
-.model-header{
+
+.model-header {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
@@ -200,12 +243,13 @@ ul li a.link{
     border-bottom: 1px solid black;
     border-color: rgb(201, 201, 201);
 }
-.model-header .title{
+
+.model-header .title {
     font-size: medium;
     font-weight: bold;
 }
 
-.model-header .close-button{
+.model-header .close-button {
     cursor: pointer;
     border: none;
     outline: none;
@@ -213,10 +257,12 @@ ul li a.link{
     font-size: 1.25rem;
     font-weight: bold;
 }
-.model-body{
+
+.model-body {
     padding: 10px 15px;
 }
-#overlay{
+
+#overlay {
     position: fixed;
     opacity: 0;
     transition: 200ms ease-in-out;
@@ -227,93 +273,111 @@ ul li a.link{
     background-color: rgba(0, 0, 0, .5);
     pointer-events: none;
 }
-#overlay.active{
+
+#overlay.active {
     opacity: 1;
     pointer-events: all;
 }
 
 /* popup ends */
 
+#inquery-table td{
+    border-color: rgb(221, 220, 220);
+}
+
 @media only screen and (max-width : 1900px) {
-    .contact-info{
+    .contact-info {
         color: white;
-        font-size:large;
+        font-size: large;
     }
-    .wina-title{
+
+    .wina-title {
         font-size: x-large;
         color: #91c7b9;
     }
 }
+
 @media only screen and (max-width : 1400px) {
-    .hr-design{
+    .hr-design {
         width: 1100px;
     }
-    .link{
+
+    .link {
         position: relative;
         cursor: pointer;
         padding-bottom: 27px;
         margin-right: 20px;
     }
 }
+
 @media only screen and (max-width : 1450px) {
     .carousel-item {
         height: 600px;
         width: 100%;
-        padding-left:  5%;
+        padding-left: 5%;
         padding-right: 5%;
     }
-    
-    .product-banner{
+
+    .product-banner {
         background-size: cover;
         min-height: 40vh;
     }
-    
-    .img-size{
+
+    .img-size {
         height: 600px;
         width: 100%;
     }
 }
+
 @media only screen and (max-width : 992px) {
     .navbar-collapse {
-    background: rgb(26, 4, 68); 
+        background: rgb(26, 4, 68);
     }
+
     .carousel-item {
-        padding-left:  0%;
+        padding-left: 0%;
         padding-right: 0%;
     }
-    .product-banner{
+
+    .product-banner {
         background-size: cover;
         min-height: 30vh;
     }
-    h5{
+
+    h5 {
         font-size: medium;
     }
-    .hr-design{
+
+    .hr-design {
         position: absolute;
         margin-top: 0px;
         margin-left: 32px;
         width: 670px;
     }
-    .machine-details{
+
+    .machine-details {
         margin-top: 10px;
         padding-top: 10px;
         padding-bottom: 10px;
         background-color: white;
     }
 }
+
 @media only screen and (max-width : 768px) {
-    .product-banner{
+    .product-banner {
         background-size: cover;
         min-height: 20vh;
     }
+
     .carousel-item {
         height: 350px;
         width: 100%;
-        padding-left:  0%;
+        padding-left: 0%;
         padding-right: 0%;
     }
-    .img-size{
-        width:100%;
-        height:100%;
+
+    .img-size {
+        width: 100%;
+        height: 100%;
     }
 }

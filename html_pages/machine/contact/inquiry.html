@@ -139,7 +139,7 @@
               
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="gc">
                 </td>
                 <td>
                   <img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px">
@@ -156,7 +156,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="double-beam-hook-gantry-crane">
                 </td>
                 <td>
                   <img src="../../../images/double-beam-hook-gantry-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -173,7 +173,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="single-beam-crane">
                 </td>
                 <td>
                   <img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">
@@ -190,7 +190,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="double-bridgeo-crane">
                 </td>
                 <td>
                   <img src="../../../images/double-beam-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -207,7 +207,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="crane-drum-brake">
                 </td>
                 <td>
                   <img src="../../../images/Crane-drum-brake .jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -224,7 +224,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="clamshell-grab">
                 </td>
                 <td>
                   <img src="../../../images/clamshell-grab.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -241,7 +241,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="wire-rope-electric-hoist">
                 </td>
                 <td>
                   <img src="../../../images/wire-rope-electric-hoist.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -258,7 +258,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="crane-wheels">
                 </td>
                 <td>
                   <img src="../../../images/cran-wheels.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -275,7 +275,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox">
+                  <input type="checkbox" id="crane-remot-control">
                 </td>
                 <td>
                   <img src="../../../images/remot-control.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -294,15 +294,16 @@
             </tbody>
           </table>
           <div class="d-flex justify-content-end">
-            <button data-close-button class="btn btn-primary mx-2 close-button">Cancel</button>
-          <button class="btn btn-dark">Confirm</button>
+            <button data-close-button class="btn btn-primary mx-2 ">Cancel</button>
+          <button data-confirm-button class="btn btn-dark" type="submit" value="submit">Confirm</button>
           </div>
           
         </div>
       </div>
+    </from>
       <div id="overlay"></div>
 
-      <table class="table text-center">
+      <table class="table text-center" id="inquery-table">
         <thead>
           <tr>
             <th>
@@ -349,10 +350,10 @@
               blank
             </td>
             <td>
-              <span style="color: red;">Remove</span>
+              <button class="remove-button" onclick="deleteRow(this)">Remove</button>
             </td>
-
           </tr>
+          
         </tbody>
       </table>
 
@@ -377,7 +378,6 @@
           <div class="col-12 my-2">
             <button type="submit" class="btn btn-dark">Submit</button>
           </div>
-        </form>
       </div>
     </div>
     <!-- machine header ends here -->
