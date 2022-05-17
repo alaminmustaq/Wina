@@ -280,10 +280,46 @@ ul li a.link {
 }
 
 /* popup ends */
+/* inquery table starts */
+#inquery-table{
+    margin-top: 20px;
+}
+
+#inquery-table th{
+    border-color: rgb(182, 182, 182);
+    background-color: rgb(245, 245, 245);
+}
 
 #inquery-table td{
     border-color: rgb(221, 220, 220);
 }
+
+.counter{
+    display: flex;
+    background-color: rgb(219, 218, 218);
+    width: 35%;
+}
+.counter input{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    border: 1px solid rgb(165, 165, 165);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.counter .up,.down{
+    font-weight: bold;
+    border: 1px solid rgb(165, 165, 165);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 60%;
+    cursor: pointer;
+}
+
+/* inquery table ends */
 
 @media only screen and (max-width : 1900px) {
     .contact-info {
