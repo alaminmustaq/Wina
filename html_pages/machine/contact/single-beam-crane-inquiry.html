@@ -139,7 +139,7 @@
               
               <tr>
                 <td>
-                  <input type="checkbox" id="gc">
+                  <input type="checkbox" id="gantry-crane-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px">
@@ -156,7 +156,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="double-beam-hook-gantry-crane">
+                  <input type="checkbox" id="double-beam-hook-gantry-crane-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/double-beam-hook-gantry-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -173,7 +173,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="single-beam-crane">
+                  <input type="checkbox" id="single-beam-crane-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">
@@ -190,7 +190,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="double-bridgeo-crane">
+                  <input type="checkbox" id="double-bridgeo-crane-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/double-beam-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -207,7 +207,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="crane-drum-brake">
+                  <input type="checkbox" id="crane-drum-brake-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/Crane-drum-brake .jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -224,7 +224,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="clamshell-grab">
+                  <input type="checkbox" id="clamshell-grab-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/clamshell-grab.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -241,7 +241,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="wire-rope-electric-hoist">
+                  <input type="checkbox" id="wire-rope-electric-hoist-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/wire-rope-electric-hoist.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -258,7 +258,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="crane-wheels">
+                  <input type="checkbox" id="crane-wheels-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/cran-wheels.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -275,7 +275,7 @@
               </tr>
               <tr>
                 <td>
-                  <input type="checkbox" id="crane-remot-control">
+                  <input type="checkbox" id="crane-remot-control-checkbox">
                 </td>
                 <td>
                   <img src="../../../images/remot-control.jpg" alt="double-beam-hook-gantry-crane" width="40px">
@@ -329,16 +329,15 @@
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+          <tr class="text-center">
             <td>
 
             </td>
             <td>
-              <img src="../../../images/single-beam-crane.jpg" alt="gantry-crane" width="40px">
+              <img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">
             </td>
             <td>
-              Single Beam Crane
+              Singel Beam Crane
             </td>
             <td>
               <span style="color: red;">0.00$</span>
@@ -346,15 +345,11 @@
             <td>
               <p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>
             </td>
-            <td>
-              blank
-            </td>
+            <td><div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="single-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div></td>
             <td>
               <button class="remove-button" onclick="deleteRow(this)">Remove</button>
             </td>
           </tr>
-          
-        </tbody>
       </table>
 
       <div class="inquiry-form">
