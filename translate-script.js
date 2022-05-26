@@ -10,6 +10,9 @@ function chinese(){
       if(window.location.hash === "#eng"){
         replace_hash("#eng","")
       }
+      else if(window.location.hash === "#ch"){
+        replace_hash("#ch","")
+      }
     }
     var home = document.querySelector(".home")
     home.textContent = "家"
@@ -118,11 +121,21 @@ function chinese(){
 
     var homepage_link = document.querySelector(".homepage_link")
     homepage_link.textContent = "主页"
+
+    var copyright_text = document.querySelector(".copyright_text")
+    copyright_text.textContent = "版权"
+
+    var rest_of_copyright = document.querySelector(".rest_of_copyright")
+    rest_of_copyright.textContent = "2022 威娜饰品有限公司好的，保留。"
+
   }
 
   function translate_english(){
     if(window.location.hash){
-      if(window.location.hash === "#ch"){
+      if(window.location.hash === "#eng"){
+        replace_hash("#eng","")
+      }
+      else if(window.location.hash === "#ch"){
         replace_hash("#ch","")
       }
     }
@@ -230,6 +243,13 @@ function chinese(){
 
     var homepage_link = document.querySelector(".homepage_link")
     homepage_link.textContent = "Homepage"
+
+    var copyright_text = document.querySelector(".copyright_text")
+    copyright_text.textContent = "Copyright"
+
+    var rest_of_copyright = document.querySelector(".rest_of_copyright")
+    rest_of_copyright.textContent = "2022 Wina Accessories Co.. Ltd. All Alright Reserved."
+    
   }
   function replace_hash(before,after){
     var home = document.querySelector(".home")
