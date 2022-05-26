@@ -2,14 +2,19 @@ document.addEventListener("DOMContentLoaded", function(){
     window.addEventListener('scroll', function() {
       if(y.matches)
       {
-        if (window.scrollY > 130) {
+        if (window.scrollY > 112) {
           document.getElementById('navbar_top').classList.add('fixed-top');
+          document.getElementById('navbar_top').classList.add('opacity-class');
+          document.getElementById('navbar_top').classList.add('nav-shadow');
           // add padding top to show content behind navbar
           navbar_height = document.querySelector('.navbar').offsetHeight;
           document.body.style.paddingTop = navbar_height + 'px';
         } 
         else{
           document.getElementById('navbar_top').classList.remove('fixed-top');
+          
+          document.getElementById('navbar_top').classList.remove('nav-shadow');
+          document.getElementById('navbar_top').classList.remove('opacity-class');
            // remove padding top from body
           document.body.style.paddingTop = '0';
         } 
@@ -112,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+      gantry_crane.checked = false
     }
     if( double_beam_hooked_gantry_crane.checked == true)
     {
@@ -135,6 +141,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      double_beam_hooked_gantry_crane.checked = false
     }
     if( single_beam_crane.checked == true)
     {
@@ -158,6 +166,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      single_beam_crane.checked = false
     }
     if( double_bridge_crane.checked == true)
     {
@@ -181,6 +191,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      double_bridge_crane.checked = false
     }
     if( crane_drum_break.checked == true)
     {
@@ -204,6 +216,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      crane_drum_break.checked = false
     }
     if( clamshell_grab.checked == true)
     {
@@ -227,6 +241,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      clamshell_grab.checked = false
     }
     if( wire_roop_electric_hoist.checked == true)
     {
@@ -250,6 +266,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      wire_roop_electric_hoist.checked = false
     }
     if( crane_wheels.checked == true)
     {
@@ -273,6 +291,8 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
     
       closeModel(model)
+
+      crane_wheels.checked = false
     }
     if( crane_remot_control.checked == true)
     {
@@ -296,9 +316,12 @@ document.addEventListener("DOMContentLoaded", function(){
       row_count++
 
       closeModel(model)
+
+      crane_remot_control.checked = false
     }
   }
 //  popup ends
+
 // inquiry_table starts
 
 var count = document.querySelector('.number')
@@ -328,3 +351,7 @@ function deleteRow(btn) {
   row_count--
 }
 // inquiry_table ends
+
+//page translation starts
+
+//page translation ends

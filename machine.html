@@ -37,46 +37,47 @@
         </div>
       </div>
       <hr class="p-0 m-0">
-      <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark">
+      <nav id="navbar_top" class="navbar navbar-expand-lg custom-toggler">
         <a href="#" class="navbar-brand ms-3 ps-lg-5 d-lg-none d-xl-none d-xxl-none">
-          <img src="logo1.png" alt="logo" width="90px" height="90px" class="d-inline-block">
+            <img src="../../logo1.png" alt="logo" width="90px" height="90px"
+            class="d-inline-block"> 
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex justify-content-center d-lg-none d-xl-none d-xxl-none">
-            <input class="form-control" type="search" placeholder="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0 mx-1" type="submit">Search</button>
+          <form class="d-flex justify-content-center d-lg-none mb-3">
+            <input class="form-control search-dropdown" type="search" placeholder="Search">
+            <button  class="search-button-dropdown" type="submit">Search</button>
           </form>
           <ul class="navbar-nav m-auto text-center">
-            <li class="nav-item mx-4">
-              <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item">
+              <a class="nav-link home"  href="index.html">Home</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="products.html">Products</a>
+            <li class="nav-item">
+              <a class="nav-link about-us"  href="about-us.html">About us</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#">
-                About us
-              </a>
+            <li class="nav-item">
+              <a class="nav-link products"  href="products.html">Products</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link active" href="#">Machinery</a>
+            <li class="nav-item">
+              <a class="nav-link machine active"  href="machine.html">Machinery</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="#">Project case</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="html_pages/contacts/contact.html">Contacts</a>
-            </li>
+            <li class="nav-item">
+                <a class="nav-link project"  href="#">Project case</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link contacts"  href="html_pages/contacts/contact.html">Contacts</a>
+              </li>
+              <li>
+                <a href="#eng" data-reload class="translate-button" onclick="english()">En</a>
+                <span style="color: #ffffffa4;">/</span>
+                <a href="#ch" data-reload class="translate-button" onclick="chinese()">Ch</a>
+              </li>
           </ul>
-          <form class="d-flex justify-content-center d-none d-lg-flex">
-            <input class="form-control" type="search" placeholder="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0 mx-1" type="submit">Search</button>
-          </form>
+          <input class="form-control search-bar search" type="search" placeholder="Search">
+          <button class="search-button" type="submit">Search</button>   
         </div>
       </nav>
     </header>
@@ -96,13 +97,13 @@
         </ul>
       </div>
       <div class="location">
-        <p class="mt-4 text-center" style="color: rgb(74, 74, 78);"><i class="bi bi-geo-alt-fill" style="color: rgb(82, 82, 250);"></i>Home page: <a class="sub-link" href="index.html">Homepage</a>/Machinery</p>
+        <p class="mt-4 text-center" style="color: rgb(74, 74, 78);"><i class="bi bi-geo-alt-fill" style="color: #205375;"></i>Home page: <a class="sub-link" href="index.html">Homepage</a>/Machinery</p>
       </div>
       
     </div>
     <!-- machine header ends here -->
     <!-- machine cards starts here -->
-    <h3 class="container  mt-4" style="color: rgb(1, 15, 13);">Machinery</h3>
+    <h3 class="container  mt-4" style="color: #205375;">Machinery</h3>
     <div class="container">
         <div class="card-section container">
           <div class="row">
@@ -112,7 +113,7 @@
                   <a href="html_pages/machine/crane/gantry_crane.html"><img class="card-img-top" src="images/machinery/gantry_crane/photobank (17).jpg" alt="granty carne"></a>
                 </div>  
               </div>
-              <h5 class="text-center pt-1">Gantry Crane</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/gantry_crane.html" class="mechine-card-title">Gantry Crane</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -121,7 +122,7 @@
                 </div>
                 
               </div>
-              <h5 class="text-center pt-1">CRANE DRUM BRAKE</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/crane-drum-brake.html" class="mechine-card-title">CRANE DRUM BRAKE</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -129,7 +130,7 @@
                   <a href="html_pages/machine/crane/single-beam.html"><img class="card-img-top" src="images/machinery/single_beam/2021082410.jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">SINGLE BEAM CRANE</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/single-beam.html" class="mechine-card-title">SINGLE BEAM CRANE</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -137,7 +138,7 @@
                   <a href="html_pages/machine/crane/double-beam.html"><img class="card-img-top" src="images//machinery/double-beam/photobank (13).jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">DOUBLE BRIDGE CRANE</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/double-beam.html" class="mechine-card-title">DOUBLE BRIDGE CRANE</a></h5>
             </div>
           </div>
     
@@ -148,7 +149,7 @@
                   <a href="html_pages/machine/crane/double-beam-hook-gc.html" ><img class="card-img-top" src="images/machinery/double_beam-hook-gc/photobank (12).jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">DOUBLE BEAM HOOK GANTRY CRANE</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/double-beam-hook-gc.html" class="mechine-card-title">DOUBLE BEAM HOOK GANTRY CRANE</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -156,7 +157,7 @@
                   <a href="html_pages/machine/crane/clamshell-grab.html"><img class="card-img-top" src="images/machinery/clamshell-grab/psb(1).jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">CLAMSHELL GRAB</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/clamshell-grab.html" class="mechine-card-title">CLAMSHELL GRAB</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -164,7 +165,7 @@
                   <a href="html_pages/machine/crane/wire-rope-elctric-hoist.html"><img class="card-img-top" src="images/machinery/wire-rope-electric-hoist/1.jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">WIRE ROPE ELECTRIC HOIST</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/wire-rope-elctric-hoist.html" class="mechine-card-title">WIRE ROPE ELECTRIC HOIST</a></h5>
             </div>
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -172,10 +173,9 @@
                   <a href="html_pages/machine/crane/cran-wheels.html"><img class="card-img-top" src="images/machinery/cran-wheels/4.jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">CRANE WHEELS</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/cran-wheels.html" class="mechine-card-title">CRANE WHEELS</a></h5>
             </div>
           </div>
-    
           <div class="row">
             <div class="col-lg-3 my-3">
               <div class="card machine-card">
@@ -183,7 +183,7 @@
                   <a href="html_pages/machine/crane/remot.html" ><img class="card-img-top" src="images/machinery/remot/202110089.jpg" alt="granty carne"></a>
                 </div>
               </div>
-              <h5 class="text-center pt-1">CRANE REMOT CONTROL</h5>
+              <h5 class="text-center pt-1"><a href="html_pages/machine/crane/remot.html" class="mechine-card-title">CRANE REMOT CONTROL</a></h5>
             </div>
           </div>
     
@@ -229,7 +229,7 @@
           </div>
           <div class="col-lg-4">
             <h5>CONTACT US</h5>
-            <ul class="list-unstyled footer-link" style="color:rgb(189, 185, 185);">
+            <ul class="list-unstyled footer-link text-dec">
               <li class="py-1">
                 <span>Email:</span><span> canglong@clsteelstructure.com</span>
               </li>
@@ -256,9 +256,9 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 ps-2">
+          <div class="col-lg-4 ps-2 text-dec">
             <h5>YOUR EMAIL ADDRESS</h5>
-            <p style="color:rgb(189, 185, 185);" >learn more about our products</p>
+            <p >learn more about our products</p>
             <form class="row g-3">
               <div class="col-8">
                 <input type="email" class="form-control" placeholder="Email"
@@ -269,7 +269,7 @@
                   style="background-color: rgb(243, 229, 229);"></textarea>
               </div>
               <div class="col-8">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit">Submit</button>
               </div>
             </form>
           </div>
@@ -277,12 +277,13 @@
 
       </div>
     </footer>
-    <footer class="my-auto text-center" style="align-items: center; height: 60px; background-color: rgb(36, 2, 21);">
+    <footer class="my-auto text-center copyright">
       <p style="color:rgb(141, 140, 140)">Copyright &copy; 2022 Wina Accessories Co.. Ltd. All Alright Reserved.</p>
     </footer>
     <!-- footer ends here -->
 
     <script src="script.js"></script>
+    <script src="translate-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"></script>
