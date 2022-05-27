@@ -1,3 +1,23 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #112B3C;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #296b97;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #296b9791;
+  }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: white;
@@ -146,9 +166,17 @@ h1 {
 }
 
 .product-banner {
+    background-color: #80c1ec;
     background-size: cover;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-blend-mode: multiply;
+    
+}
+.product-banner-title{
+    color: #EFEFEF;
+    text-align: center;
+    font-size: 50px;
 }
 .about-us-banner {
     background-size:cover;
