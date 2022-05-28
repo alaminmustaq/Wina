@@ -38,17 +38,17 @@ function chinese(){
     contacts.textContent = "联系人"
     contacts.href = contacts.href + "#ch"
 
-    var PRODUCT_PAGE_1 = document.querySelector(".PRODUCT_PAGE_1")
-    PRODUCT_PAGE_1.textContent = "一"
-    PRODUCT_PAGE_1.href = PRODUCT_PAGE_1.href + "#ch"
+    var chatagory_gantry_crane = document.querySelector(".chatagory_gantry_crane")
+    chatagory_gantry_crane.textContent = "门式起重机"
+    chatagory_gantry_crane.href = chatagory_gantry_crane.href + "#ch"
 
-    var PRODUCT_PAGE_2 = document.querySelector(".PRODUCT_PAGE_2")
-    PRODUCT_PAGE_2.textContent = "二"
-    PRODUCT_PAGE_2.href = PRODUCT_PAGE_2.href + "#ch"
+    var chatagory_bridge_crane = document.querySelector(".chatagory_bridge_crane")
+    chatagory_bridge_crane.textContent = "桥式起重机"
+    chatagory_bridge_crane.href = chatagory_bridge_crane.href + "#ch"
 
-    var PRODUCT_PAGE_NEXT = document.querySelector(".PRODUCT_PAGE_NEXT")
-    PRODUCT_PAGE_NEXT.textContent = "下一个"
-    PRODUCT_PAGE_NEXT.href = PRODUCT_PAGE_NEXT.href + "#ch"
+    var chatagory_electric_hoist = document.querySelector(".chatagory_electric_hoist")
+    chatagory_electric_hoist.textContent = "电动葫芦"
+    chatagory_electric_hoist.href = chatagory_electric_hoist.href + "#ch"
 
     var search = document.querySelector(".search")
     search.placeholder = "搜索"
@@ -141,42 +141,29 @@ function chinese(){
     var rest_of_copyright = document.querySelector(".rest_of_copyright")
     rest_of_copyright.textContent = "2022 威娜饰品有限公司好的，保留。"
 
-    var product_banner_title = document.querySelector(".product-banner-title")
-    product_banner_title.textContent = "产品展示"
+    var machine_link = document.querySelector(".machine_link")
+    machine_link.textContent = "机械"
+    machine_link.href = machine_link.href + "#ch"
 
-    var products_text = document.querySelector(".products_link")
-    products_text.textContent = "产品"
+    var category_gantry_crane_link = document.querySelector(".category_gantry_crane_link")
+    category_gantry_crane_link.textContent = "门式起重机"
 
-    var products_text = document.querySelector(".products_text")
-    products_text.textContent = "产品"
+    var title_gantry_crane_text = document.querySelector(".title_gantry_crane_text")
+    title_gantry_crane_text.textContent = "门式起重机"
+    
+    var gantry_crane_card = document.querySelector(".gantry_crane_card")
+    gantry_crane_card.href = gantry_crane_card.href + "#ch"
 
-    var solid_welding_wire = document.querySelector(".solid_welding_wire")
-    solid_welding_wire.textContent = "实心焊丝"
+    var gantry_crane_text = document.querySelector(".gantry_crane_text")
+    gantry_crane_text.textContent = "龙门起重机"
+    gantry_crane_text.href = gantry_crane_text.href + "#ch"
+    
+    var double_beam_hook_gantry_crane_card = document.querySelector(".double_beam_hook_gantry_crane_card")
+    double_beam_hook_gantry_crane_card.href = double_beam_hook_gantry_crane_card.href + "#ch"
 
-    var grinding_disk = document.querySelector(".grinding_disk")
-    grinding_disk.textContent = "磨盘"
-
-    var cut_off_wheel = document.querySelector(".cut_off_wheel")
-    cut_off_wheel.textContent = "切割轮"
-
-    var submerged_arc_welding_wire = document.querySelector(".submerged_arc_welding_wire")
-    submerged_arc_welding_wire.textContent = "埋弧焊丝"
-
-    var welding_flux = document.querySelector(".welding_flux")
-    welding_flux.textContent = "焊剂"
-
-    var solid_welding_wire2 = document.querySelector(".solid_welding_wire2")
-    solid_welding_wire2.textContent = "实心焊丝"
-
-    var welding_flux2 = document.querySelector(".welding_flux2")
-    welding_flux2.textContent = "焊剂"
-
-    var sub_arc_wel_wire = document.querySelector(".sub-arc-wel-wire")
-    sub_arc_wel_wire.textContent = "埋弧焊丝"
-
-    var grinding_disk2 = document.querySelector(".grinding_disk2")
-    grinding_disk2.textContent = "磨盘"
-
+    var double_beam_hook_gantry_crane_text = document.querySelector(".double_beam_hook_gantry_crane_text")
+    double_beam_hook_gantry_crane_text.textContent = "双梁钩龙门起重机"
+    double_beam_hook_gantry_crane_text.href = double_beam_hook_gantry_crane_text.href + "#ch"
   }
 
   function translate_english(){
@@ -211,18 +198,18 @@ function chinese(){
     var contacts = document.querySelector(".contacts")
     contacts.textContent = "Contacts"
     contacts.href = contacts.href + "#eng"
+    
+    var chatagory_gantry_crane = document.querySelector(".chatagory_gantry_crane")
+    chatagory_gantry_crane.textContent = "Gantry Crane"
+    chatagory_gantry_crane.href = chatagory_gantry_crane.href + "#eng"
 
-    var PRODUCT_PAGE_1 = document.querySelector(".PRODUCT_PAGE_1")
-    PRODUCT_PAGE_1.textContent = "1"
-    PRODUCT_PAGE_1.href = PRODUCT_PAGE_1.href + "#eng"
+    var chatagory_bridge_crane = document.querySelector(".chatagory_bridge_crane")
+    chatagory_bridge_crane.textContent = "Bridge Crane"
+    chatagory_bridge_crane.href = chatagory_bridge_crane.href + "#eng"
 
-    var PRODUCT_PAGE_2 = document.querySelector(".PRODUCT_PAGE_2")
-    PRODUCT_PAGE_2.textContent = "2"
-    PRODUCT_PAGE_2.href = PRODUCT_PAGE_2.href + "#eng"
-
-    var PRODUCT_PAGE_NEXT = document.querySelector(".PRODUCT_PAGE_NEXT")
-    PRODUCT_PAGE_NEXT.textContent = "Next"
-    PRODUCT_PAGE_NEXT.href = PRODUCT_PAGE_NEXT.href + "#eng"
+    var chatagory_electric_hoist = document.querySelector(".chatagory_electric_hoist")
+    chatagory_electric_hoist.textContent = "Electric Hoist"
+    chatagory_electric_hoist.href = chatagory_electric_hoist.href + "#eng"
 
     var search = document.querySelector(".search")
     search.placeholder = "Search"
@@ -312,41 +299,30 @@ function chinese(){
     var rest_of_copyright = document.querySelector(".rest_of_copyright")
     rest_of_copyright.textContent = "2022 Wina Accessories Co.. Ltd. All Alright Reserved."
 
-    var product_banner_title = document.querySelector(".product-banner-title")
-    product_banner_title.textContent = "Product Display"
+    var machine_link = document.querySelector(".machine_link")
+    machine_link.textContent = "Machinery"
+    machine_link.href = machine_link.href + "#eng"
 
-    var products_text = document.querySelector(".products_link")
-    products_text.textContent = "Products"
+    var category_gantry_crane_link = document.querySelector(".category_gantry_crane_link")
+    category_gantry_crane_link.textContent = "Gantry Crane"
 
-    var products_text = document.querySelector(".products_text")
-    products_text.textContent = "Products"
+    var title_gantry_crane_text = document.querySelector(".title_gantry_crane_text")
+    title_gantry_crane_text.textContent = "Gantry Crane"
     
-    var solid_welding_wire = document.querySelector(".solid_welding_wire")
-    solid_welding_wire.textContent = "SOLID WELDING WIRE"
+    var gantry_crane_card = document.querySelector(".gantry_crane_card")
+    gantry_crane_card.href = gantry_crane_card.href + "#eng"
 
-    var grinding_disk = document.querySelector(".grinding_disk")
-    grinding_disk.textContent = "GRINDING DISK"
+    var gantry_crane_text = document.querySelector(".gantry_crane_text")
+    gantry_crane_text.textContent = "GANTRY CRANE"
+    gantry_crane_text.href = gantry_crane_text.href + "#eng"
+    
+    var double_beam_hook_gantry_crane_card = document.querySelector(".double_beam_hook_gantry_crane_card")
+    double_beam_hook_gantry_crane_card.href = double_beam_hook_gantry_crane_card.href + "#eng"
 
-    var cut_off_wheel = document.querySelector(".cut_off_wheel")
-    cut_off_wheel.textContent = "CUT-OFF WHEEL"
-
-    var submerged_arc_welding_wire = document.querySelector(".submerged_arc_welding_wire")
-    submerged_arc_welding_wire.textContent = "SUBMERGED ARC WELDING WIRE"
-
-    var welding_flux = document.querySelector(".welding_flux")
-    welding_flux.textContent = "WELDING FLUX"
-
-    var solid_welding_wire2 = document.querySelector(".solid_welding_wire2")
-    solid_welding_wire2.textContent = "SOLID WELDING WIRE"
-
-    var welding_flux2 = document.querySelector(".welding_flux2")
-    welding_flux2.textContent = "WELDING FLUX"
-
-    var sub_arc_wel_wire = document.querySelector(".sub-arc-wel-wire")
-    sub_arc_wel_wire.textContent = "SUBMERGED ARC WELDING WIRE"
-
-    var grinding_disk2 = document.querySelector(".grinding_disk2")
-    grinding_disk2.textContent = "GRINDING DISK"
+    var double_beam_hook_gantry_crane_text = document.querySelector(".double_beam_hook_gantry_crane_text")
+    double_beam_hook_gantry_crane_text.textContent = "DOUBLE BEAM HOOK GANTRY CRANE"
+    double_beam_hook_gantry_crane_text.href = double_beam_hook_gantry_crane_text.href + "#eng"
+    
   }
   function replace_hash(before,after){
     var home = document.querySelector(".home")
@@ -367,17 +343,33 @@ function chinese(){
     var contacts = document.querySelector(".contacts")
     contacts.href = contacts.href.replace(before,after)
 
+    var chatagory_gantry_crane = document.querySelector(".chatagory_gantry_crane")
+    chatagory_gantry_crane.href = chatagory_gantry_crane.href.replace(before,after)
+
+    var chatagory_bridge_crane = document.querySelector(".chatagory_bridge_crane")
+    chatagory_bridge_crane.href = chatagory_bridge_crane.href.replace(before,after)
+
+    var chatagory_electric_hoist = document.querySelector(".chatagory_electric_hoist")
+    chatagory_electric_hoist.href = chatagory_electric_hoist.href.replace(before,after)
+
     var homepage_link = document.querySelector(".homepage_link")
     homepage_link.href = homepage_link.href.replace(before,after)
+    
+    var machine_link = document.querySelector(".machine_link")
+    machine_link.href = machine_link.href.replace(before,after)
 
-    var PRODUCT_PAGE_1 = document.querySelector(".PRODUCT_PAGE_1")
-    PRODUCT_PAGE_1.href = PRODUCT_PAGE_1.href.replace(before,after)
+    var gantry_crane_card = document.querySelector(".gantry_crane_card")
+    gantry_crane_card.href = gantry_crane_card.href.replace(before,after)
 
-    var PRODUCT_PAGE_2 = document.querySelector(".PRODUCT_PAGE_2")
-    PRODUCT_PAGE_2.href = PRODUCT_PAGE_2.href.replace(before,after)
+    var gantry_crane_text = document.querySelector(".gantry_crane_text")
+    gantry_crane_text.href = gantry_crane_text.href.replace(before,after)
+    
+    var double_beam_hook_gantry_crane_card = document.querySelector(".double_beam_hook_gantry_crane_card")
+    double_beam_hook_gantry_crane_card.href = double_beam_hook_gantry_crane_card.href.replace(before,after)
 
-    var PRODUCT_PAGE_NEXT = document.querySelector(".PRODUCT_PAGE_NEXT")
-    PRODUCT_PAGE_NEXT.href = PRODUCT_PAGE_NEXT.href.replace(before,after)
+    var double_beam_hook_gantry_crane_text = document.querySelector(".double_beam_hook_gantry_crane_text")
+    double_beam_hook_gantry_crane_text.href = double_beam_hook_gantry_crane_text.href.replace(before,after)
+
   }
   if(window.location.hash){
     if(window.location.hash=="#ch"){
@@ -388,3 +380,4 @@ function chinese(){
     }
   }
   
+
