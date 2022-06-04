@@ -294,9 +294,7 @@ table tr td {
 }
 
 .machine-details {
-    padding-top: 60px;
-    padding-bottom: 60px;
-
+    align-self: center;
 }
 
 /* machine sub navbar */
@@ -487,6 +485,47 @@ ul li a.link {
 }
 
 /* inquery table ends */
+
+.message_submit_btn{
+    width: 100%;
+    background-color: #0c1f2c;
+    color: white;
+    border: 1px solid #0c1f2c;
+    padding: 6px;
+    font-size: 20px;
+}
+.message_submit_btn:hover{
+    width: 100%;
+    background-color: #0c1f2cec;
+    color: white;
+    border: 1px solid #0c1f2cec;
+    padding: 6px;
+}
+
+.inquiry_btn{
+    background-color: #0c1f2cea;
+    color: white;
+    border: 1px solid #0c1f2cea;
+    padding: 6px;
+}
+.inquiry_btn:hover{
+    background-color: #0c1f2cda;
+    color: white;
+    border: 1px solid #0c1f2cda;
+    padding: 6px;
+}
+.book_aplication_btn{
+    background-color: #0c1f2cea;
+    color: white;
+    border: 1px solid #0c1f2cea;
+    padding: 6px;
+}
+.book_aplication_btn:hover{
+    background-color: #0c1f2cda;
+    color: white;
+    border: 1px solid #0c1f2cda;
+    padding: 6px;
+}
 
 @media only screen and (max-width : 1900px) {
     .contact-info {
