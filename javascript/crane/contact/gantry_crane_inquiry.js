@@ -1,3 +1,591 @@
+document.addEventListener("DOMContentLoaded", function(){
+  window.addEventListener('scroll', function() {
+    if(y.matches)
+    {
+      if (window.scrollY > 112) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+        document.getElementById('navbar_top').classList.add('opacity-class');
+        document.getElementById('navbar_top').classList.add('nav-shadow');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+      } 
+      else{
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+        
+        document.getElementById('navbar_top').classList.remove('nav-shadow');
+        document.getElementById('navbar_top').classList.remove('opacity-class');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+      } 
+    }
+  });
+  function myFunction(x) {
+    if (x.matches) { // If media query matches
+      document.getElementById('navbar_top').classList.add('fixed-top');
+          // add padding top to show content behind navbar
+          navbar_height = document.querySelector('.navbar').offsetHeight;
+          document.body.style.paddingTop = navbar_height + 'px';
+    }
+    else{
+      document.getElementById('navbar_top').classList.remove('fixed-top');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+    }
+  }
+  var y = window.matchMedia("(min-width: 992px)")
+  var x = window.matchMedia("(max-width: 992px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction)
+});
+
+//  popup starts
+
+var row_count = 2
+
+const openModelButtons = document.querySelectorAll('[data-model-target]')
+const closeModelButtons = document.querySelectorAll('[data-close-button]')
+const confirmButton = document.querySelectorAll('[data-confirm-button]')
+const overlay = document.getElementById('overlay')
+let table = document.getElementById('inquery-table')
+
+openModelButtons.forEach(button =>{
+  button.addEventListener('click', () =>{
+    const model = document.querySelector(button.dataset.modelTarget)
+    openModel(model)
+  })
+})
+overlay.addEventListener('click', () =>{
+  const models = document.querySelectorAll('.model.active')
+  models.forEach(model => {
+    closeModel(model)
+  })
+})
+closeModelButtons.forEach(button =>{
+  button.addEventListener('click', () =>{
+    const model = button.closest('.model')
+    closeModel(model)
+  })
+})
+confirmButton.forEach(button =>{
+  button.addEventListener('click', () =>{
+    const model = button.closest('.model')
+    confirmModel(model)
+  })
+})
+function openModel(model){
+  if(model == null) return
+  model.classList.add('active')
+  overlay.classList.add('active')
+}
+function closeModel(model){
+  if(model == null) return
+  model.classList.remove('active')
+  overlay.classList.remove('active')
+}
+function confirmModel(model){
+  if(model == null) return
+  var gantry_crane = document.getElementById('gantry-crane-checkbox')
+  var double_beam_hooked_gantry_crane = document.getElementById('double-beam-hook-gantry-crane-checkbox')
+  var single_beam_crane = document.getElementById('single-beam-crane-checkbox')
+  var double_bridge_crane = document.getElementById('double-bridgeo-crane-checkbox')
+  var crane_drum_break = document.getElementById('crane-drum-brake-checkbox')
+  var clamshell_grab = document.getElementById('clamshell-grab-checkbox')
+  var wire_roop_electric_hoist = document.getElementById('wire-rope-electric-hoist-checkbox')
+  var crane_wheels = document.getElementById('crane-wheels-checkbox')
+  var crane_remot_control = document.getElementById('crane-remot-control-checkbox')
+  if( gantry_crane.checked == true)
+  {
+
+    var row = table.insertRow(row_count);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = "";
+        cell2.innerHTML = '<img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px">'
+        cell3.innerHTML = 'Gantry Crane'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+      
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = "";
+        cell2.innerHTML = '<img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px">'
+        cell3.innerHTML = '门式起重机'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+      }
+    }
+    else{
+        cell1.innerHTML = "";
+        cell2.innerHTML = '<img src="../../../images/granty-crane.jpg" alt="gantry-crane" width="40px">'
+        cell3.innerHTML = 'Gantry Crane'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+      
+    }
+
+    
+
+    row_count++
+
+    closeModel(model)
+    gantry_crane.checked = false
+  }
+  if( double_beam_hooked_gantry_crane.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/double-beam-hook-gantry-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">'
+        cell3.innerHTML = 'Double Beam Hook Gantry Crane'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-hook-gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/double-beam-hook-gantry-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">'
+        cell3.innerHTML = '双梁钩门式起重机'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-hook-gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+      cell2.innerHTML = '<img src="../../../images/double-beam-hook-gantry-crane.jpg" alt="double-beam-hook-gantry-crane" width="40px">'
+      cell3.innerHTML = 'Double Beam Hook Gantry Crane'
+      cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+      cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+      cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-hook-gantry-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+      cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    row_count++
+
+    closeModel(model)
+
+    double_beam_hooked_gantry_crane.checked = false
+  }
+  if( single_beam_crane.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">'
+    cell3.innerHTML = 'Single Beam Crane'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="single-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">'
+        cell3.innerHTML = '单梁起重机'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="single-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+    
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/single-beam-crane.jpg" alt="single-beam-crane" width="40px">'
+    cell3.innerHTML = 'Single Beam Crane'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="single-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    single_beam_crane.checked = false
+  }
+  if( double_bridge_crane.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/double-beam-crane.jpg" alt="double-bridge-crane" width="40px">'
+    cell3.innerHTML = 'Double Bridge Crane'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/double-beam-crane.jpg" alt="double-bridge-crane" width="40px">'
+        cell3.innerHTML = '双桥起重机'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+    
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/double-beam-crane.jpg" alt="double-bridge-crane" width="40px">'
+    cell3.innerHTML = 'Double Bridge Crane'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="double-beam-crane-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    double_bridge_crane.checked = false
+  }
+  if( crane_drum_break.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
+    var cell5 = row.insertCell(4);
+    var cell6 = row.insertCell(5);
+    var cell7 = row.insertCell(6);
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/crane-drum-brake .jpg" alt="crane-drum-break" width="40px">'
+    cell3.innerHTML = 'Crane Drum Brake'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="crane-drum-brake-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/crane-drum-brake .jpg" alt="crane-drum-break" width="40px">'
+        cell3.innerHTML = '起重机鼓式制动器'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="crane-drum-brake-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+    
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/crane-drum-brake .jpg" alt="crane-drum-break" width="40px">'
+    cell3.innerHTML = 'Crane Drum Brake'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="crane-drum-brake-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    crane_drum_break.checked = false
+  }
+  if( clamshell_grab.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/clamshell-grab.jpg" alt="clamshell-grab" width="40px">'
+    cell3.innerHTML = 'Clamshell Grab'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="clamshell-grab-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+        cell2.innerHTML = '<img src="../../../images/clamshell-grab.jpg" alt="clamshell-grab" width="40px">'
+        cell3.innerHTML = '翻盖式抓斗'
+        cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+        cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+        cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="clamshell-grab-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+        cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+    
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/clamshell-grab.jpg" alt="clamshell-grab" width="40px">'
+    cell3.innerHTML = 'Clamshell Grab'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="clamshell-grab-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    clamshell_grab.checked = false
+  }
+  if( wire_roop_electric_hoist.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/wire-rope-electric-hoist.jpg" alt="wire-rope-electric-hoist" width="40px">'
+    cell3.innerHTML = 'Wire Rope Electric Hoist'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="wire-rope-electric-hoist-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/wire-rope-electric-hoist.jpg" alt="wire-rope-electric-hoist" width="40px">'
+    cell3.innerHTML = '钢丝绳电动葫芦'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="wire-rope-electric-hoist-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/wire-rope-electric-hoist.jpg" alt="wire-rope-electric-hoist" width="40px">'
+    cell3.innerHTML = 'Wire Rope Electric Hoist'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="wire-rope-electric-hoist-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    wire_roop_electric_hoist.checked = false
+  }
+  if( crane_wheels.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/cran-wheels.jpg" alt="crane-wheels" width="40px">'
+    cell3.innerHTML = 'Crane Wheels'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="cran-wheels-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/cran-wheels.jpg" alt="crane-wheels" width="40px">'
+    cell3.innerHTML = '起重机车轮'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="cran-wheels-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/cran-wheels.jpg" alt="crane-wheels" width="40px">'
+    cell3.innerHTML = 'Crane Wheels'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="cran-wheels-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+  
+    closeModel(model)
+
+    crane_wheels.checked = false
+  }
+  if( crane_remot_control.checked == true)
+  {
+    var row = table.insertRow(row_count)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)
+    var cell3 = row.insertCell(2)
+    var cell4 = row.insertCell(3)
+    var cell5 = row.insertCell(4)
+    var cell6 = row.insertCell(5)
+    var cell7 = row.insertCell(6)
+
+    if(window.location.hash){
+      if(window.location.hash === "#eng"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/remot-control.jpg" alt="remot-control" width="40px">'
+    cell3.innerHTML = 'Crane Remote Control'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="remot-control-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+      }
+      else if(window.location.hash === "#ch"){
+        cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/remot-control.jpg" alt="remot-control" width="40px">'
+    cell3.innerHTML = '起重机遥控器'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="remot-control-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">消除</button>'
+
+      }
+    }
+    else{
+      cell1.innerHTML = ""
+    cell2.innerHTML = '<img src="../../../images/remot-control.jpg" alt="remot-control" width="40px">'
+    cell3.innerHTML = 'Crane Remote Control'
+    cell4.innerHTML = '<span style="color: red;">0.00$</span>'
+    cell5.innerHTML = '<p class="border m-0" style="color: rgb(202, 200, 200);">Please en</p>'
+    cell6.innerHTML = '<div class="counter m-auto"><div class="down" onclick="down(this)">-</div><div class="count"><input type="text" value="01" class="number" id="remot-control-count"></div><div class="up" onclick="plus(this)">+</div></div>'
+    cell7.innerHTML = '<button class="remove-button" onclick="deleteRow(this)">Remove</button>'
+
+    }
+
+    
+    row_count++
+
+    closeModel(model)
+
+    crane_remot_control.checked = false
+  }
+}
+//  popup ends
+
+// inquiry_table starts
+
+var count = document.querySelector('.number')
+let a = count.value
+
+function plus(btn){
+count = btn.parentNode.querySelector('.number')
+a = count.value
+a++
+a = (a<10) ? "0" + a : a 
+count.value = a
+console.log(count.id)
+}
+function down(btn){
+count = btn.parentNode.querySelector('.number')
+a = count.value
+if(count.value > 1){
+  a--
+  a = (a<10) ? "0" + a : a 
+  count.value = a
+}
+}
+
+function deleteRow(btn) {
+var row = btn.parentNode.parentNode;
+row.parentNode.removeChild(row);
+row_count--
+}
+// inquiry_table ends
+// translation starts
+
+var datareload = document.querySelectorAll("[data-relaod]")
+
 function chinese(){
     translate_chinese()
   }
@@ -141,41 +729,125 @@ function chinese(){
     var rest_of_copyright = document.querySelector(".rest_of_copyright")
     rest_of_copyright.textContent = "2022 威娜饰品有限公司好的，保留。"
 
-    var machine_link = document.querySelector(".machine_link")
-    machine_link.textContent = "机械"
-    machine_link.href = machine_link.href + "#ch"
+    var enquiry_link = document.querySelector(".enquiry_link")
+    enquiry_link.textContent = "询问"
 
-    var main_title = document.querySelector(".main_title")
-    main_title.textContent = "翻盖式抓斗"
+    var enquiry_text = document.querySelector(".enquiry_text")
+    enquiry_text.textContent = "询问"
+    
+    var product_info_title = document.querySelector(".product_info_title")
+    product_info_title.textContent = "产品信息"
 
-    var def = document.querySelector(".def")
-    def.textContent = "翻盖式抓斗是通过控制吊车下方钢丝绳的提升来装卸大颗粒和大块的有效工具。抓斗的爪形如花瓣，前端锋利，可减少阻力，便于物料插入，提高挖掘力。"
+    var add_product = document.querySelector(".add_product")
+    add_product.textContent = "+添加产品"
+    
+    var sl = document.querySelector(".sl")
+    sl.textContent = "产品序列号"
 
-    var def = document.querySelector(".def1")
-    def.textContent = "由于抓斗尺寸不同，体积也不同。"
+    var thumbnail = document.querySelector(".thumbnail")
+    thumbnail.textContent = "缩略图"
 
-    var def = document.querySelector(".def2")
-    def.textContent = "根据物料的密度和体积，设计了轻型、中型、重型三种工作抓斗。"
+    var product_name = document.querySelector(".product_name")
+    product_name.textContent = "产品名称"
 
-    var spec = document.querySelector(".spec")
-    spec.textContent = "起重机抓斗工作职责："
+    var price = document.querySelector(".price")
+    price.textContent = "零售价"
 
-    var spec_1 = document.querySelector(".spec_1")
-    spec_1.textContent = "轻质：适用于各种粉煤灰、石灰粉、矿渣粉等。"
+    var expected_unit = document.querySelector(".expected_unit")
+    expected_unit.textContent = "预期单位"
 
-    var spec_2 = document.querySelector(".spec_2")
-    spec_2.textContent = "介质：适用于锰矿、铜精矿、锌精矿、铁、铅、锌熟料、矿渣砂、石灰石、砾石等。"
+    var quantity = document.querySelector(".quantity")
+    quantity.textContent = "订单数量"
 
-    var spec_3 = document.querySelector(".spec_3")
-    spec_3.textContent = "重型：适用于储存铁矿石、白云石、菱镁矿、铜、铅精矿、散装熟石灰等。"
+    var operation = document.querySelector(".operation")
+    operation.textContent = "手术"
 
-    var inquiry_btn = document.querySelector(".inquiry_btn")
-    inquiry_btn.textContent = "询问"
-    inquiry_btn.href = inquiry_btn.href + "#ch"
+    var gantry_crane = document.querySelector(".gantry_crane")
+    gantry_crane.textContent = "门式起重机"
 
-    var book_aplication_btn = document.querySelector(".book_aplication_btn")
-    book_aplication_btn.textContent = "图书申请"
-    book_aplication_btn.href = book_aplication_btn.href + "#ch"
+    var remove_button = document.querySelector(".remove-button")
+    remove_button.textContent = "消除"
+    
+    var inquiry_explanation = document.querySelector(".inquiry_explanation")
+    inquiry_explanation.textContent = "询价说明"
+
+    var contact_info = document.querySelector(".contact_info")
+    contact_info.textContent = "联系信息"
+    
+    var name = document.querySelector(".name")
+    name.textContent = "姓名"
+
+    var email = document.querySelector(".email")
+    email.textContent = "电子邮件"
+
+    var phone = document.querySelector(".phone")
+    phone.textContent = "电话"
+
+    var inquiry_explanation_placeholder = document.querySelector(".inquiry_explanation_placeholder")
+    inquiry_explanation_placeholder.placeholder = "请输入您的询问的解释"
+
+    var name_placeholder = document.querySelector(".name_placeholder")
+    name_placeholder.placeholder = "请输入你的名字"
+
+    var email_placeholder = document.querySelector(".email_placeholder")
+    email_placeholder.placeholder = "请输入您的电子邮件 ID"
+
+    var phone_placeholder = document.querySelector(".phone_placeholder")
+    phone_placeholder.placeholder = "请输入您的电话号码"
+
+    var submit_btn = document.querySelector(".submit_btn")
+    submit_btn.textContent = "提交"
+    
+    var popup_select = document.querySelector(".popup_select")
+    popup_select.textContent = "选择"
+
+    var popup_thumbnail = document.querySelector(".popup_thumbnail")
+    popup_thumbnail.textContent = "缩略图"
+
+    var popup_sl = document.querySelector(".popup_sl")
+    popup_sl.textContent = "产品系列"
+
+    var popup_product_name = document.querySelector(".popup_product_name")
+    popup_product_name.textContent = "产品名称"
+
+    var popup_price = document.querySelector(".popup_price")
+    popup_price.textContent = "零售价"
+    
+    var popup_gantry_crane = document.querySelector(".popup_gantry_crane")
+    popup_gantry_crane.textContent = "门式起重机"
+
+    var popup_double_beam_hook_gantry_crane = document.querySelector(".popup_double_beam_hook_gantry_crane")
+    popup_double_beam_hook_gantry_crane.textContent = "双梁钩龙门起重机"
+
+    var popup_single_beam_crane = document.querySelector(".popup_single_beam_crane")
+    popup_single_beam_crane.textContent = "单梁起重机"
+
+    var popup_double_bridge_crane = document.querySelector(".popup_double_bridge_crane")
+    popup_double_bridge_crane.textContent = "双桥起重机"
+
+    var popup_crane_drum_brake = document.querySelector(".popup_crane_drum_brake")
+    popup_crane_drum_brake.textContent = "起重机鼓式制动器"
+
+    var popup_clamshell_grab = document.querySelector(".popup_clamshell_grab")
+    popup_clamshell_grab.textContent = "翻盖式抓斗"
+
+    var popup_wire_rope_elec_hoist = document.querySelector(".popup_wire_rope_elec_hoist")
+    popup_wire_rope_elec_hoist.textContent = "钢丝绳电动葫芦"
+
+    var popup_crane_wheels = document.querySelector(".popup_crane_wheels")
+    popup_crane_wheels.textContent = "起重机车轮"
+
+    var popup_remot = document.querySelector(".popup_remot")
+    popup_remot.textContent = "起重机遥控器"
+    
+    var popup_cancel = document.querySelector(".popup_cancel")
+    popup_cancel.textContent = "取消"
+
+    var popup_confirm = document.querySelector(".popup_confirm")
+    popup_confirm.textContent = "确认"
+
+    var popup_add_product = document.querySelector(".popup_add_product")
+    popup_add_product.textContent = "添加产品"
   }
 
   function translate_english(){
@@ -311,43 +983,128 @@ function chinese(){
     var rest_of_copyright = document.querySelector(".rest_of_copyright")
     rest_of_copyright.textContent = "2022 Wina Accessories Co.. Ltd. All Alright Reserved."
 
-    var machine_link = document.querySelector(".machine_link")
-    machine_link.textContent = "Machinery"
-    machine_link.href = machine_link.href + "#eng"
+    var enquiry_link = document.querySelector(".enquiry_link")
+    enquiry_link.textContent = "Inquiry"
 
-    var main_title = document.querySelector(".main_title")
-    main_title.textContent = "Clamshell Grab"
+    var enquiry_text = document.querySelector(".enquiry_text")
+    enquiry_text.textContent = "Inquiry"
 
-    var def = document.querySelector(".def")
-    def.textContent = "Clamshell grab is an effective tool to load and unload large particles and large blocks by controlling the lifting of wire rope under the crane. The jaws of the grab are like petals, and the front end is sharp, which can reduce the resistance, facilitate the insertion of materials and improve the digging force."
+    var product_info_title = document.querySelector(".product_info_title")
+    product_info_title.textContent = "Product Information"
 
-    var def = document.querySelector(".def1")
-    def.textContent = "Due to the different sizes of grab, the volume is also different."
+    var add_product = document.querySelector(".add_product")
+    add_product.textContent = "+Add Product"
 
-    var def = document.querySelector(".def2")
-    def.textContent = "According to the density and volume of materials, three types of working grab are designed, such as light, medium, and heavy types."
+    var sl = document.querySelector(".sl")
+    sl.textContent = "Product serial number"
 
-    var spec = document.querySelector(".spec")
-    spec.textContent = "Crane Grab Working Duty:"
+    var thumbnail = document.querySelector(".thumbnail")
+    thumbnail.textContent = "Thumbnail"
 
-    var spec_1 = document.querySelector(".spec_1")
-    spec_1.textContent = "Lightweight: suitable for all kinds of fly ash, lime powder, slag powder, etc."
+    var product_name = document.querySelector(".product_name")
+    product_name.textContent = "Name of product"
 
-    var spec_2 = document.querySelector(".spec_2")
-    spec_2.textContent = "Medium: suitable for manganese ore, copper concentrate, zinc concentrate, iron, lead, zinc clinker, slag and sand, limestone, gravel, etc."
+    var price = document.querySelector(".price")
+    price.textContent = "Retail price"
 
-    var spec_3 = document.querySelector(".spec_3")
-    spec_3.textContent = "Heavy duty: suitable for storage of iron ore, dolomite, magnesite, copper, lead concentrate, bulk slaked lime, etc."
+    var expected_unit = document.querySelector(".expected_unit")
+    expected_unit.textContent = "Expected unit"
 
-    var inquiry_btn = document.querySelector(".inquiry_btn")
-    inquiry_btn.textContent = "Inquiry"
-    inquiry_btn.href = inquiry_btn.href + "#eng"
+    var quantity = document.querySelector(".quantity")
+    quantity.textContent = "Order quantity"
 
-    var book_aplication_btn = document.querySelector(".book_aplication_btn")
-    book_aplication_btn.textContent = "Book Applicaion"
-    book_aplication_btn.href = book_aplication_btn.href + "#eng"
+    var operation = document.querySelector(".operation")
+    operation.textContent = "Operation"
+
+    var gantry_crane = document.querySelector(".gantry_crane")
+    gantry_crane.textContent = "Gantry Crane"
+
+    var remove_button = document.querySelector(".remove-button")
+    remove_button.textContent = "Remove"
+
+    var inquiry_explanation = document.querySelector(".inquiry_explanation")
+    inquiry_explanation.textContent = "Inquiry Explanation"
+
+    var contact_info = document.querySelector(".contact_info")
+    contact_info.textContent = "Contact Information"
+
+    var name = document.querySelector(".name")
+    name.textContent = "Name"
+
+    var email = document.querySelector(".email")
+    email.textContent = "Email"
+
+    var phone = document.querySelector(".phone")
+    phone.textContent = "Phone"
+
+    var inquiry_explanation_placeholder = document.querySelector(".inquiry_explanation_placeholder")
+    inquiry_explanation_placeholder.placeholder = "Please Enter An Explanation For Your Inquiry"
+
+    var name_placeholder = document.querySelector(".name_placeholder")
+    name_placeholder.placeholder = "Please Enter Your Name"
+
+    var email_placeholder = document.querySelector(".email_placeholder")
+    email_placeholder.placeholder = "Please Enter Your Email Id"
+
+    var phone_placeholder = document.querySelector(".phone_placeholder")
+    phone_placeholder.placeholder = "Please Enter Your Phone Number"
+
+    var submit_btn = document.querySelector(".submit_btn")
+    submit_btn.textContent = "Submit"
+
+    var popup_select = document.querySelector(".popup_select")
+    popup_select.textContent = "Select"
+
+    var popup_thumbnail = document.querySelector(".popup_thumbnail")
+    popup_thumbnail.textContent = "Thumbnail"
+
+    var popup_sl = document.querySelector(".popup_sl")
+    popup_sl.textContent = "Product serial"
+
+    var popup_product_name = document.querySelector(".popup_product_name")
+    popup_product_name.textContent = "Name of product"
+
+    var popup_price = document.querySelector(".popup_price")
+    popup_price.textContent = "Retail price"
+
+    var popup_gantry_crane = document.querySelector(".popup_gantry_crane")
+    popup_gantry_crane.textContent = "Gantry Crane"
+
+    var popup_double_beam_hook_gantry_crane = document.querySelector(".popup_double_beam_hook_gantry_crane")
+    popup_double_beam_hook_gantry_crane.textContent = "DOUBLE BEAM HOOK GANTRY CRANE"
+
+    var popup_single_beam_crane = document.querySelector(".popup_single_beam_crane")
+    popup_single_beam_crane.textContent = "SINGLE BEAM CRANE"
+
+    var popup_double_bridge_crane = document.querySelector(".popup_double_bridge_crane")
+    popup_double_bridge_crane.textContent = "DOUBLE BRIDGE CRANE"
+
+    var popup_crane_drum_brake = document.querySelector(".popup_crane_drum_brake")
+    popup_crane_drum_brake.textContent = "CRANE DRUM BRAKE"
+
+    var popup_clamshell_grab = document.querySelector(".popup_clamshell_grab")
+    popup_clamshell_grab.textContent = "CLAMSHELL GRAB"
+
+    var popup_wire_rope_elec_hoist = document.querySelector(".popup_wire_rope_elec_hoist")
+    popup_wire_rope_elec_hoist.textContent = "WIRE ROPE ELECTRIC HOIST"
+
+    var popup_crane_wheels = document.querySelector(".popup_crane_wheels")
+    popup_crane_wheels.textContent = "CRANE WHEELS"
+
+    var popup_remot = document.querySelector(".popup_remot")
+    popup_remot.textContent = "CRANE REMOTE CONTROL"
+
+    var popup_cancel = document.querySelector(".popup_cancel")
+    popup_cancel.textContent = "Cancel"
+
+    var popup_confirm = document.querySelector(".popup_confirm")
+    popup_confirm.textContent = "Confirm"
     
+    var popup_add_product = document.querySelector(".popup_add_product")
+    popup_add_product.textContent = "Add Product"
   }
+
+
   function replace_hash(before,after){
     var home = document.querySelector(".home")
     home.href = home.href.replace(before,after)
@@ -379,15 +1136,6 @@ function chinese(){
     var homepage_link = document.querySelector(".homepage_link")
     homepage_link.href = homepage_link.href.replace(before,after)
 
-    var machine_link = document.querySelector(".machine_link")
-    machine_link.href = machine_link.href.replace(before,after)
-
-    var inquiry_btn = document.querySelector(".inquiry_btn")
-    inquiry_btn.href = inquiry_btn.href.replace(before,after)
-
-    var book_aplication_btn = document.querySelector(".book_aplication_btn")
-    book_aplication_btn.href = book_aplication_btn.href.replace(before,after)
-
   }
   if(window.location.hash){
     if(window.location.hash=="#ch"){
@@ -397,5 +1145,7 @@ function chinese(){
       translate_english()
     }
   }
+
   
+  // translation ends
 
