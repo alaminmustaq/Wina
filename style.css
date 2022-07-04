@@ -266,6 +266,95 @@ footer {
     width: 100%;
 }
 
+.hero{
+    background-color: #0c1f2c;
+    background-image: url("images/index_banner1.jpg");
+    padding-top: 195px;
+    padding-bottom: 195px;
+    color: white;
+    width: 100%;
+    background-size: cover;
+}
+.Clamshell_title{
+    padding-left: 5%;
+    font-weight: 500;
+    font-size: 40px;
+    color: #803434;
+}
+.Clamshell_button{
+    text-decoration: none;
+    padding: 1%;
+    border-radius: 10%;
+    margin-left: 5%;
+    background-color: #803434;
+    color: white;
+    border: #803434;
+    font-size: larger;
+}
+.Clamshell_button:hover{
+    background-color: #803434ea;
+    color: white;
+    border: #803434ea;
+    font-size: larger;
+}
+
+#index-banner-item-1{
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.news_wraper{
+    background-color: whitesmoke;
+    padding: 2%;
+}
+.top_news_title{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+}
+.top_news_time{
+    color: gray;
+}
+.news_title{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+.news_time{
+    color: gray;
+}
+.fa-solid{
+    color: gray;
+}
+.index_icons_text{
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+    
+}
+.index_icons{
+    background-color: white;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    text-align: center;
+    border: 4px solid gray;
+    transition: 300ms ease-in-out;
+}
+.index_icons:hover{
+    background-color: #f66b0e;
+    text-align: center;
+    border: 2px solid #f66b0e;
+}
+.index_icons:hover p{
+    color: white;
+}
+.index_icons:hover .fa-solid{
+    color: white;
+}
+
 .carousel-control-next,
 .carousel-control-prev{
     filter: invert(100%);
@@ -598,6 +687,22 @@ ul li a.link {
     width: 90%;
 }
 
+
+/* about us starts */
+/* company profile starts */
+.company_profile{
+    margin-top: 2%;
+}
+.company_profile h4{
+    color: #205375;
+}
+.company_profile p{
+    color: #0c1f2c;
+    font-size: large;
+    margin-top: 1.5%;
+}
+/* company profile ends */
+/* about us ends */
 @media only screen and (max-width : 1900px) {
     .contact-info {
         color: white;
