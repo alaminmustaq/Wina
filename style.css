@@ -627,6 +627,7 @@ ul li a.link {
     background-color: white;
     width: 1000px;
     max-width: 80%;
+    overflow: hidden;
 }
 
 .model.active {
@@ -676,6 +677,9 @@ ul li a.link {
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+.scrollbar{
+    overflow: scroll;
 }
 
 /* popup ends */
@@ -830,8 +834,12 @@ table tr td {
     font-size: large;
     margin-top: 1.5%;
 }
-
 /* company profile ends */
+/* leaders speach starts */
+.leaders_speach{
+    background-color: rgb(243, 243, 243);
+}
+/* leaders speach ends */
 /* about us ends */
 
 @media only screen and (max-width : 1900px) {
@@ -930,6 +938,10 @@ table tr td {
     }
     .Clamshell_button{
         font-size: large;
+    }
+
+    .leaders_speach{
+        background-color: white;
     }
 }
 
