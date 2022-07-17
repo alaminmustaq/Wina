@@ -1111,6 +1111,17 @@ table tr td {
     .Clamshell_button{
         font-size: small;
     }
+    .list {
+        list-style: none;
+        top: 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 10vh;
+    }
+    .location {
+        font-size: 15px;
+    }
 }
 @media only screen and (max-width : 450px) {
     #hero{
@@ -1142,13 +1153,5 @@ table tr td {
     
     .news_title {
         font-size: 8px;
-    }
-    .list {
-        list-style: none;
-        top: 0px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 8vh;
     }
 }
