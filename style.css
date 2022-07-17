@@ -1120,7 +1120,7 @@ table tr td {
         height: 10vh;
     }
     .location {
-        font-size: 15px;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width : 450px) {
