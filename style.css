@@ -626,7 +626,7 @@ ul li a.link {
     z-index: 10;
     background-color: white;
     width: 1000px;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 .model.active {
@@ -677,9 +677,7 @@ ul li a.link {
     opacity: 1;
     pointer-events: all;
 }
-.scrollbar{
-    overflow: scroll;
-}
+
 
 /* popup ends */
 /* inquery table starts */
@@ -1021,6 +1019,29 @@ table tr td {
     .Clamshell_button{
         font-size: medium;
     }
+    thead{
+        display: none;
+    }
+    .scrollbar, .scrollbar tbody, .scrollbar tr, .scrollbar td{
+        display: block;
+        width: 100%;
+        text-align: left;
+        border: 0px;
+        margin: 0px;
+        padding: 2px;
+        font-weight: bold;
+    }
+    .scrollbar tr{
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+        background: whitesmoke;
+        box-shadow: .75em .75em 1em rgb(221, 221, 221);
+        
+    }
+    .remove-button{
+        background-color: #f84848;
+        color: white;
+    }
 }
 
 @media only screen and (max-width : 768px) {
@@ -1076,6 +1097,11 @@ table tr td {
     .news_title {
         font-size: 10px;
     }
+
+    
+    
+    
+
 }
 
 @media only screen and (max-width : 664px) {
